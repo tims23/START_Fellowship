@@ -19,7 +19,7 @@ const CardFacebook = () => {
           sx={{ display: 'flex', marginBottom: 2.75, alignItems: 'center', color: 'common.white' }}
         >
           <Facebook sx={{ marginRight: 2.5 }} />
-          Facebook Card
+          Facebook
         </Typography>
         <Typography variant='body2' sx={{ marginBottom: 3, color: 'common.white' }}>
           You’ve read about the importance of being courageous, rebellious and imaginative. These are all vital

@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-const CardAppleWatch = () => {
+const Card7 = () => {
   return (
     <Card>
       <CardMedia sx={{ height: '9.375rem' }} image='/images/cards/watch-on-hand.jpg' />
@@ -14,14 +14,14 @@ const CardAppleWatch = () => {
           Apple Watch
         </Typography>
         <Typography variant='body2'>
-          3.1GHz 6-core 10th-generation Intel Core i5 processor, Turbo Boost up to 4.5GHz
+          Card 7
         </Typography>
       </CardContent>
       <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
-        Add To Cart
+        Show StartUp
       </Button>
     </Card>
   )
 }
 
-export default CardAppleWatch
+export default Card7

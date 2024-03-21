@@ -19,7 +19,7 @@ const CardTwitter = () => {
           sx={{ display: 'flex', marginBottom: 2.75, alignItems: 'center', color: 'common.white' }}
         >
           <Twitter sx={{ marginRight: 2.5 }} />
-          Twitter Card
+          Twitter
         </Typography>
         <Typography variant='body2' sx={{ marginBottom: 3, color: 'common.white' }}>
           Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as

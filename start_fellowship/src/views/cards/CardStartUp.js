@@ -6,7 +6,6 @@ import Avatar from '@mui/material/Avatar'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
-import AvatarGroup from '@mui/material/AvatarGroup'
 
 const CardUser = () => {
   return (
@@ -36,24 +35,11 @@ const CardUser = () => {
           }}
         >
           <Box sx={{ mr: 2, mb: 1, display: 'flex', flexDirection: 'column' }}>
-            <Typography variant='h6'>Robert Meyer</Typography>
-            <Typography variant='caption'>London, UK</Typography>
+            <Typography sx={{ mb:-1 }} variant='h5'>Dirimla AI</Typography>
+            <Typography sx={{ mb:3 }}variant='caption'>Software Technology, Germany</Typography>
+            <Typography variant='body2'>DirimlaAI is a software company based in Frankfurt, Germany commited to solve the problem of knowledge decline within large companies.</Typography>
           </Box>
-          <Button variant='contained'>Send Request</Button>
-        </Box>
-        <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant='subtitle2' sx={{ whiteSpace: 'nowrap', color: 'text.primary' }}>
-            18 mutual friends
-          </Typography>
-          <AvatarGroup max={4}>
-            <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
-            <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
-            <Avatar src='/images/avatars/3.png' alt='Howard Lloyd' />
-            <Avatar src='/images/avatars/2.png' alt='Bettie Dunn' />
-            <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
-            <Avatar src='/images/avatars/5.png' alt='Jimmy Hanson' />
-            <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
-          </AvatarGroup>
+          <Button sx={{ mt: 5, mb: -10 }}variant='contained'>Show Details</Button>
         </Box>
       </CardContent>
     </Card>

@@ -19,7 +19,7 @@ const CardLinkedIn = () => {
           sx={{ display: 'flex', marginBottom: 2.75, alignItems: 'center', color: 'common.white' }}
         >
           <Linkedin sx={{ marginRight: 2.5 }} />
-          LinkedIn Card
+          LinkedIn
         </Typography>
         <Typography variant='body2' sx={{ marginBottom: 3, color: 'common.white' }}>
           With the Internet spreading like wildfire and reaching every part of our daily life, more and more traffic is

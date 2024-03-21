@@ -82,7 +82,7 @@ const TabSecurity = () => {
                   Coming soon ...
                 </Typography>
                 <Typography variant='body1' sx={{ mt: 0, ml: 10 }} xs={4} sm={4}>
-                  You will be able to see current information about the startup included in several articles from the web in this section.
+                  You will be able to see current information about the startup included in several articles from the webgi in this section.
                 </Typography>
               </Grid>
             </Grid>
