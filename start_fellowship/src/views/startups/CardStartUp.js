@@ -10,7 +10,7 @@ const CardStartUp = (props) => {
     <Card>
       <CardMedia sx={{height: '9rem'}} image={props.image} />
       <CardContent style={{height: '10rem'}}>
-        <Link href={"/dashboard/test"}>
+        <Link href={`/${props.name}`} >
             <Typography variant='h6' sx={{ marginBottom: 2 }}> {props.name} </Typography>
         </Link>
         <Typography sx={{
