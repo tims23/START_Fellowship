@@ -1,6 +1,7 @@
 const themeConfig = {
   // ** Layout Configs
   templateName: 'START Fellowship' /* App Name */,
+  templateLogo: '/images/logos/start-logo.png',
   mode: 'light' /* light | dark */,
   contentWidth: 'boxed' /* full | boxed */,
   // ** Routing Configs
