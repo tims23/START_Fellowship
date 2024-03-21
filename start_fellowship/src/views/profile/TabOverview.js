@@ -1,25 +1,36 @@
 // ** React Imports
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
-import Alert from '@mui/material/Alert'
 import Select from '@mui/material/Select'
 import { styled } from '@mui/material/styles'
 import MenuItem from '@mui/material/MenuItem'
+import FormLabel from '@mui/material/FormLabel'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
-import AlertTitle from '@mui/material/AlertTitle'
-import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
 import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import RadioGroup from '@mui/material/RadioGroup'
+import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 
 // ** Icons Imports
 import Close from 'mdi-material-ui/Close'
+
+// ** Third Party Imports
+import DatePicker from 'react-datepicker'
+
+// ** Styled Components
+import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
+
+const CustomInput = forwardRef((props, ref) => {
+  return <TextField inputRef={ref} label='Founding Date' fullWidth {...props} />
+})
 
 const ImgStyled = styled('img')(({ theme }) => ({
   width: 120,
@@ -27,6 +38,14 @@ const ImgStyled = styled('img')(({ theme }) => ({
   marginRight: theme.spacing(6.25),
   borderRadius: theme.shape.borderRadius
 }))
+
+const FileStyled = styled('img')(({ theme }) => ({
+  width: 600,
+  height: 240,
+  marginRight: theme.spacing(6.25),
+  borderRadius: theme.shape.borderRadius
+}))
+
 
 const ButtonStyled = styled(Button)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
@@ -45,10 +64,10 @@ const ResetButtonStyled = styled(Button)(({ theme }) => ({
   }
 }))
 
-const TabAccount = () => {
+const TabProfile = () => {
   // ** State
-  const [openAlert, setOpenAlert] = useState(true)
   const [imgSrc, setImgSrc] = useState('/images/avatars/1.png')
+  const [date, setDate] = useState(null)
 
   const onChange = file => {
     const reader = new FileReader()
@@ -58,6 +77,7 @@ const TabAccount = () => {
       reader.readAsDataURL(files[0])
     }
   }
+
 
   return (
     <CardContent>
@@ -87,65 +107,117 @@ const TabAccount = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Username' placeholder='johnDoe' defaultValue='johnDoe' />
+
+
+          <Grid item xs={24} sm={24}>
+            <Typography variant='body1' sx={{ m: 0 }} xs={4} sm={4}>
+              Primary Information
+            </Typography>
+            <Divider sx={{ m:0, ml: 43, mt:-3 }} xs={20} sm={20}/>
           </Grid>
+
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Name' placeholder='John Doe' defaultValue='John Doe' />
+            <TextField fullWidth label='Company' placeholder='e.g. "Dirimla AI"' />
           </Grid>
+          <Grid item xs={6} sm={3}>
+            <FormControl fullWidth>
+              <InputLabel>Country</InputLabel>
+              <Select label='Country'>
+                <MenuItem value='Germany'>Germany</MenuItem>
+                <MenuItem value='Australia'>Australia</MenuItem>
+                <MenuItem value='Switzerland'>Switzerland</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <DatePickerWrapper>
+              <DatePicker
+                selected={date}
+                showYearDropdown
+                showMonthDropdown
+                id='profile-date'
+                placeholderText='MM-DD-YYYY'
+                customInput={<CustomInput />}
+                onChange={date => setDate(date)}
+              />
+            </DatePickerWrapper>
+          </Grid>
+          <Grid item xs={12} sm={6} sx={{ mt: -2 }}>
+            <TextField fullWidth label='Industry' placeholder='e.g. "Software Technology"' />
+          </Grid>
+          <Grid item xs={12} sm={6} sx={{ mt: -2 }}>
+            <FormControl>
+              <FormLabel sx={{ fontSize: '0.875rem' }}>Stage</FormLabel>
+              <RadioGroup row defaultValue='male' aria-label='gender' name='account-settings-info-radio'>
+                <FormControlLabel value='junior' label='Junior' control={<Radio />} />
+                <FormControlLabel value='incubator' label='Incubator' control={<Radio />} />
+                <FormControlLabel value='accelarator' label='Accelarator' control={<Radio />} />
+                <FormControlLabel value='Veteran' label='Veteran' control={<Radio />} />
+              </RadioGroup>
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={12} sx={{ mt: -2, mb: 3 }}>
+            <TextField
+              fullWidth
+              multiline
+              label='Description'
+              minRows={2}
+              placeholder='e.g. "We are a software startup based in Frankfurt, Germany ..."'            />
+          </Grid>
+
+          <Grid item xs={24} sm={24}>
+            <Typography variant='body' sx={{ m: 0 }} xs={4} sm={4}>
+              Presentation
+            </Typography>
+            <Divider sx={{ m:0, ml: 30, mt:-3 }} xs={20} sm={20}/>
+          </Grid>
+
+          <Grid item xs={12} sx={{ marginTop: 0, marginBottom: 3 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <FileStyled src={imgSrc} alt='Profile Pic' />
+              <Box>
+                <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
+                  Upload Business Plan
+                  <input
+                    hidden
+                    type='file'
+                    onChange={onChange}
+                    accept='image/png, image/jpeg'
+                    id='account-settings-upload-image'
+                  />
+                </ButtonStyled>
+                <ResetButtonStyled color='error' variant='outlined' onClick={() => setImgSrc('/images/avatars/1.png')}>
+                  Reset
+                </ResetButtonStyled>
+                <Typography variant='body2' sx={{ marginTop: 5 }}>
+                  Allowed PNG or JPEG. Max size of 800K.
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+
+          <Grid item xs={24} sm={24}>
+            <Typography variant='body' sx={{ m: 0 }} xs={4} sm={4}>
+              Further Information
+            </Typography>
+            <Divider sx={{ m:0, ml: 30, mt:-3 }} xs={20} sm={20}/>
+          </Grid>
+
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
               type='email'
               label='Email'
-              placeholder='johnDoe@example.com'
-              defaultValue='johnDoe@example.com'
-            />
+              placeholder='e.g. "info@dirimlaAI.com"' />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormControl fullWidth>
-              <InputLabel>Role</InputLabel>
-              <Select label='Role' defaultValue='admin'>
-                <MenuItem value='admin'>Admin</MenuItem>
-                <MenuItem value='author'>Author</MenuItem>
-                <MenuItem value='editor'>Editor</MenuItem>
-                <MenuItem value='maintainer'>Maintainer</MenuItem>
-                <MenuItem value='subscriber'>Subscriber</MenuItem>
-              </Select>
-            </FormControl>
+            <TextField
+              fullWidth
+              type='phone'
+              label='Phone'
+              placeholder='e.g. "+49 12345678"' />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <FormControl fullWidth>
-              <InputLabel>Status</InputLabel>
-              <Select label='Status' defaultValue='active'>
-                <MenuItem value='active'>Active</MenuItem>
-                <MenuItem value='inactive'>Inactive</MenuItem>
-                <MenuItem value='pending'>Pending</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='Company' placeholder='ABC Pvt. Ltd.' defaultValue='ABC Pvt. Ltd.' />
-          </Grid>
-
-          {openAlert ? (
-            <Grid item xs={12} sx={{ mb: 3 }}>
-              <Alert
-                severity='warning'
-                sx={{ '& a': { fontWeight: 400 } }}
-                action={
-                  <IconButton size='small' color='inherit' aria-label='close' onClick={() => setOpenAlert(false)}>
-                    <Close fontSize='inherit' />
-                  </IconButton>
-                }
-              >
-                <AlertTitle>Your email is not confirmed. Please check your inbox.</AlertTitle>
-                <Link href='/' onClick={e => e.preventDefault()}>
-                  Resend Confirmation
-                </Link>
-              </Alert>
-            </Grid>
-          ) : null}
 
           <Grid item xs={12}>
             <Button variant='contained' sx={{ marginRight: 3.5 }}>
@@ -161,4 +233,4 @@ const TabAccount = () => {
   )
 }
 
-export default TabAccount
+export default TabProfile

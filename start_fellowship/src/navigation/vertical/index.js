@@ -1,7 +1,7 @@
 // ** Icon imports
 import CubeOutline from 'mdi-material-ui/CubeOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
-import CogOutline from 'mdi-material-ui/CogOutline'
+import AccountOutline from 'mdi-material-ui/AccountOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
 import AccountGroup from 'mdi-material-ui/AccountGroup'
 import AccountCowboyHat from 'mdi-material-ui/AccountCowboyHat'
@@ -41,9 +41,9 @@ const navigation = () => {
       sectionTitle: 'Other'
     },
     {
-      title: 'Settings',
-      icon: CogOutline,
-      path: '/account-settings'
+      title: 'Your Profile',
+      icon: AccountOutline,
+      path: '/profile'
     },
     {
       title: 'Typography',

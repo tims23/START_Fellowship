@@ -43,9 +43,9 @@ const TabName = styled('span')(({ theme }) => ({
   }
 }))
 
-const AccountSettings = () => {
+const Profile = () => {
   // ** State
-  const [value, setValue] = useState('account')
+  const [value, setValue] = useState('profile')
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -56,7 +56,7 @@ const AccountSettings = () => {
       <TabContext value={value}>
         <TabList
           onChange={handleChange}
-          aria-label='account-settings tabs'
+          aria-label='profile tabs'
           sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
         >
           <Tab
@@ -115,4 +115,4 @@ const AccountSettings = () => {
   )
 }
 
-export default AccountSettings
+export default Profile
