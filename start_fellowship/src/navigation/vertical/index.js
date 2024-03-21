@@ -4,10 +4,10 @@ import Table from 'mdi-material-ui/Table'
 import CubeOutline from 'mdi-material-ui/CubeOutline'
 import HomeOutline from 'mdi-material-ui/HomeOutline'
 import FormatLetterCase from 'mdi-material-ui/FormatLetterCase'
-import AccountCogOutline from 'mdi-material-ui/AccountCogOutline'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
-import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+import AccountGroup from 'mdi-material-ui/AccountGroup'
+import AccountCowboyHat from 'mdi-material-ui/AccountCowboyHat'
+import AccountCog from 'mdi-material-ui/AccountCog'
+import AccountCash from 'mdi-material-ui/AccountCash'
 import GoogleCirclesExtended from 'mdi-material-ui/GoogleCirclesExtended'
 
 const navigation = () => {
@@ -18,56 +18,48 @@ const navigation = () => {
       path: '/'
     },
     {
-      title: 'Your Profile',
-      icon: AccountCogOutline,
-      path: '/account-settings'
+      title: 'Community',
+      icon: AccountGroup,
+      path: '/cards'
     },
     {
       sectionTitle: 'Database'
     },
     {
       title: 'Fellows',
-      icon: Login,
-      path: '/pages/login',
-      openInNewTab: true
+      icon: AccountCowboyHat,
+      path: '/tables'
     },
     {
       title: 'StartUps',
-      icon: AccountPlusOutline,
-      path: '/pages/register',
-      openInNewTab: true
+      icon: CubeOutline,
+      path: '/tables'
     },
     {
       title: 'Investors',
-      icon: AlertCircleOutline,
-      path: '/pages/error',
-      openInNewTab: true
+      icon: AccountCash,
+      path: '/tables'
     },
     {
       sectionTitle: 'Other'
     },
     {
-      title: 'Settings',
+      title: 'Profile Settings',
+      icon: AccountCog,
+      path: '/account-settings'
+    },
+    {
+      title: 'Typography',
       icon: FormatLetterCase,
       path: '/typography'
     },
     {
       title: 'Icons',
       path: '/icons',
-      icon: GoogleCirclesExtended
+      icon: FormatLetterCase
     },
     {
-      title: 'Cards',
-      icon: CreditCardOutline,
-      path: '/cards'
-    },
-    {
-      title: 'Tables',
-      icon: Table,
-      path: '/tables'
-    },
-    {
-      icon: CubeOutline,
+      icon: FormatLetterCase,
       title: 'Form Layouts',
       path: '/form-layouts'
     }
