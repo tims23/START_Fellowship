@@ -48,12 +48,7 @@ const WeeklyOverview = () => {
     },
     dataLabels: { enabled: false },
     colors: [
-      theme.palette.background.default,
-      theme.palette.background.default,
-      theme.palette.background.default,
       theme.palette.primary.main,
-      theme.palette.background.default,
-      theme.palette.background.default
     ],
     states: {
       hover: {
@@ -83,25 +78,20 @@ const WeeklyOverview = () => {
   return (
     <Card>
       <CardHeader
-        title='Weekly Overview'
+        title='Progress: North Star Metric'
         titleTypographyProps={{
-          sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' }
+          sx: { lineHeight: '1rem !important', letterSpacing: '0.15px !important' }
         }}
-        action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
-        }
       />
       <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
-        <ReactApexcharts type='bar' height={205} options={options} series={[{ data: [37, 57, 45, 75, 57, 40, 65] }]} />
-        <Box sx={{ mb: 7, display: 'flex', alignItems: 'center' }}>
-          <Typography variant='h5' sx={{ mr: 4 }}>
-            45%
+        <ReactApexcharts type='bar' height={205} options={options} series={[{ data: [10, 25, 32, 54, 49, 66, 75] }]} />
+        <Box sx={{ mb: 3, display: 'flex', alignItems: 'center' }}>
+          <Typography variant='h5' sx={{ mr: 6, mt: 3, ml: 2 }}>
+            +65%
           </Typography>
-          <Typography variant='body2'>Your sales performance is 45% 😎 better compared to last month</Typography>
+          <Typography variant='body2'sx={{ mt: 3 }}>Your North Star Metric  increased by around 65% over the last 12 months.</Typography>
         </Box>
-        <Button fullWidth variant='contained'>
+        <Button fullWidth variant='contained' sx={{ mt: 0, display: 'flex', alignItems: 'center' }}>
           Details
         </Button>
       </CardContent>

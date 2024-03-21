@@ -21,7 +21,7 @@ import KeyOutline from 'mdi-material-ui/KeyOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 
-const TabSecurity = () => {
+const News = () => {
   // ** States
   const [values, setValues] = useState({
     newPassword: '',
@@ -82,7 +82,7 @@ const TabSecurity = () => {
                   Coming soon ...
                 </Typography>
                 <Typography variant='body1' sx={{ mt: 0, ml: 10 }} xs={4} sm={4}>
-                  You will be able to see current information about the startup included in several articles from the webgi in this section.
+                  You will be able to see current information about the startup included in several articles from the web in this section.
                 </Typography>
               </Grid>
             </Grid>
@@ -103,4 +103,4 @@ const TabSecurity = () => {
   )
 }
 
-export default TabSecurity
+export default News

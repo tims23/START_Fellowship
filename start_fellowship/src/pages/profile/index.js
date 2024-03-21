@@ -20,7 +20,7 @@ import EmailOutline from 'mdi-material-ui/EmailOutline'
 import TabOverview from 'src/views/profile/TabOverview'
 import TabPeople from 'src/views/profile/TabPeople'
 import TabFinancialData from 'src/views/profile/TabFinancialData'
-import TabNews from 'src/views/profile/TabNews'
+import TabNews from 'src/views/dashboard/News'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'
