@@ -33,7 +33,7 @@ const navigation = () => {
     {
       title: 'StartUps',
       icon: CubeOutline,
-      path: '/tables'
+      path: '/startups-list'
     },
     {
       title: 'Investors',
