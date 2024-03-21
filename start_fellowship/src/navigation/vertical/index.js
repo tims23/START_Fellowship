@@ -18,36 +18,36 @@ const navigation = () => {
       path: '/'
     },
     {
-      title: 'Account Settings',
+      title: 'Your Profile',
       icon: AccountCogOutline,
       path: '/account-settings'
     },
     {
-      sectionTitle: 'Pages'
+      sectionTitle: 'Database'
     },
     {
-      title: 'Login',
+      title: 'Fellows',
       icon: Login,
       path: '/pages/login',
       openInNewTab: true
     },
     {
-      title: 'Register',
+      title: 'StartUps',
       icon: AccountPlusOutline,
       path: '/pages/register',
       openInNewTab: true
     },
     {
-      title: 'Error',
+      title: 'Investors',
       icon: AlertCircleOutline,
       path: '/pages/error',
       openInNewTab: true
     },
     {
-      sectionTitle: 'User Interface'
+      sectionTitle: 'Other'
     },
     {
-      title: 'Typography',
+      title: 'Settings',
       icon: FormatLetterCase,
       path: '/typography'
     },
