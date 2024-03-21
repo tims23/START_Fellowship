@@ -6,14 +6,15 @@ import Avatar from '@mui/material/Avatar'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
+import Link from 'next/link'
 
-const CardUser = () => {
+const CardUser = ({name, image, description, industry, location, banner='/images/cards/background-user.png'}) => {
   return (
     <Card sx={{ position: 'relative' }}>
-      <CardMedia sx={{ height: '12.625rem' }} image='/images/cards/background-user.png' />
+      <CardMedia sx={{ height: '12.625rem' }} image={banner} />
       <Avatar
         alt='Robert Meyer'
-        src='/images/avatars/1.png'
+        src={image}
         sx={{
           width: 75,
           height: 75,
@@ -34,12 +35,23 @@ const CardUser = () => {
             justifyContent: 'space-between'
           }}
         >
-          <Box sx={{ mr: 2, mb: 1, display: 'flex', flexDirection: 'column' }}>
-            <Typography sx={{ mb:-1 }} variant='h5'>Dirimla AI</Typography>
-            <Typography sx={{ mb:3 }}variant='caption'>Software Technology, Germany</Typography>
-            <Typography variant='body2'>DirimlaAI is a software company based in Frankfurt, Germany commited to solve the problem of knowledge decline within large companies.</Typography>
+          <Box style={{height: "9rem"}} sx={{ mr: 2, mb: 1, display: 'flex', flexDirection: 'column' }}>
+            <Typography sx={{ mb:-1 }} variant='h5'>{name}</Typography>
+            <Typography sx={{ mb:3 }}variant='caption'>{industry}, {location}</Typography>
+            <Typography 
+            sx={{
+              display: '-webkit-box',
+              overflow: 'hidden',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 3,
+              }} 
+            variant='body2'>
+              {description}
+              </Typography>
           </Box>
-          <Button sx={{ mt: 5, mb: -10 }}variant='contained'>Show Details</Button>
+          <Link href={`/${name}`}>
+            <Button sx={{ mt: 5, mb: -10 }}variant='contained'>Show Details</Button>
+          </Link>
         </Box>
       </CardContent>
     </Card>
