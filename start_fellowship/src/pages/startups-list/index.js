@@ -2,7 +2,7 @@
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
-// ** Demo Components Imports
+// ** Components Imports
 import CardStartUp from 'src/views/cards/CardStartUp'
 
 const CardBasic = () => {
