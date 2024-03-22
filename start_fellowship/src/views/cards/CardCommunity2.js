@@ -17,9 +17,6 @@ const Card2 = () => {
         European startups, transcending linguistic and regional boundaries, are increasingly targeting Latin American markets for growth. Companies from various countries and sectors are tapping into the region's vast customer base, tech talent, and conducive public policies. Despite cultural and administrative hurdles, ventures like Payflow and Nutrix have successfully ventured into this market, attracted by the potential for quicker regulatory approvals and substantial customer needs. However, challenges such as the high cost of leadership talent and local employment regulations persist.
         </Typography>
       </CardContent>
-      <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
-        Show StartUp
-      </Button>
     </Card>
   )
 }

@@ -17,9 +17,6 @@ const Card5 = () => {
           Card 7
         </Typography>
       </CardContent>
-      <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
-        Show StartUp
-      </Button>
     </Card>
   )
 }

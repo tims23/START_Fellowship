@@ -17,9 +17,6 @@ const Card3 = () => {
         Dr. Hendrik Brandis, co-founder of Earlybirdventure, shares an optimistic outlook on Germany's potential for revolutionary technologies. He proposes a no-state-funds-required strategy to leverage state creditworthiness, attracting institutional investor capital and significantly increasing investment volume. This approach could benefit the economy by unlocking growth capital needed for scaling innovations while offering attractive investment alternatives and better returns for the insurance industry.
         </Typography>
       </CardContent>
-      <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>
-        Show StartUp
-      </Button>
     </Card>
   )
 }
