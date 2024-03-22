@@ -25,7 +25,7 @@ const navigation = () => {
     {
       title: 'Fellows',
       icon: AccountCowboyHat,
-      path: '/tables'
+      path: '/fellows-list'
     },
     {
       title: 'StartUps',
@@ -33,9 +33,9 @@ const navigation = () => {
       path: '/startups-list'
     },
     {
-      title: 'Investors',
+      title: 'Partner',
       icon: AccountCash,
-      path: '/tables'
+      path: '/investors-list'
     },
     {
       sectionTitle: 'Other'
