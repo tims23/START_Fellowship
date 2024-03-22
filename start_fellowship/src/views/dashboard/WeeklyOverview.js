@@ -59,7 +59,7 @@ const WeeklyOverview = () => {
       }
     },
     xaxis: {
-      categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      categories: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
       tickPlacement: 'on',
       labels: { show: false },
       axisTicks: { show: false },
