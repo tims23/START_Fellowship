@@ -6,6 +6,9 @@ import Typography from '@mui/material/Typography'
 
 import CardCommunity1 from 'src/views/cards/CardCommunity1'
 import CardCommunity2 from 'src/views/cards/CardCommunity2'
+import CardCommunity3 from 'src/views/cards/CardCommunity3'
+import CardCommunity4 from 'src/views/cards/CardCommunity4'
+import CardCommunity5 from 'src/views/cards/CardCommunity5'
 import CardTwitter from 'src/views/cards/CardTwitter'
 import CardFacebook from 'src/views/cards/CardFacebook'
 import CardLinkedIn from 'src/views/cards/CardLinkedIn'
@@ -25,24 +28,17 @@ const CardBasic = () => {
         <CardCommunity2 />
       </Grid>
       <Grid item xs={12} sm={6} md={4}>
-        <CardCommunity1 />
+        <CardCommunity3 />
       </Grid>
 
       <Grid item xs={12} sm={6}>
-        <CardCommunity1 />
+        <CardCommunity4 />
       </Grid>
       <Grid item xs={12} sm={6}>
-        <CardCommunity2 />
-      </Grid>
-
-      <Grid item xs={12} sm={6} md={4}>
-        <CardCommunity2 />
-      </Grid>
-      <Grid item xs={12} sm={8}>
         <CardCommunity1 />
       </Grid>
 
-      <Grid item xs={12} sx={{ pb: 0, pt: theme => `${theme.spacing(17.5)} !important` }}>
+      <Grid item xs={12} sx={{ pb: 0, pt:10 }}>
         <Typography variant='h5'>Social Media</Typography>
       </Grid>
 

@@ -58,8 +58,6 @@ const Dashboard = () => {
                 setstartUp(newData)
               })
         } catch (error) {
-
-            //redirect("/404")
         }
     }, [router.query.startUpName])
     

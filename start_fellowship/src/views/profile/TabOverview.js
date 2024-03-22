@@ -154,7 +154,7 @@ const TabProfile = () => {
                 <FormControlLabel value='fefe' label='Seed' control={<Radio />} />
                 <FormControlLabel value='incubator' label='Series A' control={<Radio />} />
                 <FormControlLabel value='accelarator' label='Series B' control={<Radio />} />
-                <FormControlLabel value='Veteran' label='Seriec C+' control={<Radio />} />
+                <FormControlLabel value='Veteran' label='Series C+' control={<Radio />} />
               </RadioGroup>
             </FormControl>
           </Grid>
@@ -170,40 +170,9 @@ const TabProfile = () => {
 
           <Grid item xs={24} sm={24}>
             <Typography variant='body' sx={{ m: 0 }} xs={4} sm={4}>
-              Presentation
+              Contact Information
             </Typography>
-            <Divider sx={{ m:0, ml: 30, mt:-3 }} xs={20} sm={20}/>
-          </Grid>
-
-          <Grid item xs={12} sx={{ marginTop: 0, marginBottom: 3 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <FileStyled src={imgSrc} alt='Profile Pic' />
-              <Box>
-                <ButtonStyled component='label' variant='contained' htmlFor='account-settings-upload-image'>
-                  Upload Business Plan
-                  <input
-                    hidden
-                    type='file'
-                    onChange={onChange}
-                    accept='image/png, image/jpeg'
-                    id='account-settings-upload-image'
-                  />
-                </ButtonStyled>
-                <ResetButtonStyled color='error' variant='outlined' onClick={() => setImgSrc('/images/avatars/1.png')}>
-                  Reset
-                </ResetButtonStyled>
-                <Typography variant='body2' sx={{ marginTop: 5 }}>
-                  Allowed PNG or JPEG. Max size of 800K.
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-
-          <Grid item xs={24} sm={24}>
-            <Typography variant='body' sx={{ m: 0 }} xs={4} sm={4}>
-              Further Information
-            </Typography>
-            <Divider sx={{ m:0, ml: 30, mt:-3 }} xs={20} sm={20}/>
+            <Divider sx={{ m:0, ml: 42, mt:-3 }} xs={20} sm={20}/>
           </Grid>
 
           <Grid item xs={12} sm={6}>
