@@ -32,45 +32,6 @@ const News = () => {
     showConfirmNewPassword: false
   })
 
-  // Handle Current Password
-  const handleCurrentPasswordChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value })
-  }
-
-  const handleClickShowCurrentPassword = () => {
-    setValues({ ...values, showCurrentPassword: !values.showCurrentPassword })
-  }
-
-  const handleMouseDownCurrentPassword = event => {
-    event.preventDefault()
-  }
-
-  // Handle New Password
-  const handleNewPasswordChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value })
-  }
-
-  const handleClickShowNewPassword = () => {
-    setValues({ ...values, showNewPassword: !values.showNewPassword })
-  }
-
-  const handleMouseDownNewPassword = event => {
-    event.preventDefault()
-  }
-
-  // Handle Confirm New Password
-  const handleConfirmNewPasswordChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value })
-  }
-
-  const handleClickShowConfirmNewPassword = () => {
-    setValues({ ...values, showConfirmNewPassword: !values.showConfirmNewPassword })
-  }
-
-  const handleMouseDownConfirmNewPassword = event => {
-    event.preventDefault()
-  }
-
   return (
     <form>
       <CardContent sx={{ paddingBottom: 0 }}>

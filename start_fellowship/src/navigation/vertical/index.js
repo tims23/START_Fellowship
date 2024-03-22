@@ -44,21 +44,6 @@ const navigation = () => {
       title: 'Your Profile',
       icon: AccountOutline,
       path: '/profile'
-    },
-    {
-      title: 'Typography',
-      icon: FormatLetterCase,
-      path: '/typography'
-    },
-    {
-      title: 'Icons',
-      path: '/icons',
-      icon: FormatLetterCase
-    },
-    {
-      icon: FormatLetterCase,
-      title: 'Form Layouts',
-      path: '/form-layouts'
     }
   ]
 }
