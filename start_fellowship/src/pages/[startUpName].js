@@ -45,7 +45,8 @@ const Dashboard = () => {
             name: "",
             value: ""
         },
-        totalFundingReceived: "0$"
+        totalFundingReceived: "0$",
+        lastUpdated: "undefined"
     })
 
     useEffect(() => {
@@ -83,7 +84,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={3} sm={2.5} lg={2.5}>
                 <Typography variant='body2' sx={{ letterSpacing: '0.25px', mt:15 }}>
-                Last updated: <b>18 days ago</b>
+                Last updated: <b>{startUp.lastUpdated}</b>
                 </Typography>
             </Grid>
         </Grid>

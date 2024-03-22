@@ -14,6 +14,12 @@ import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import CellphoneLink from 'mdi-material-ui/CellphoneLink'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
+import { useState } from 'react'
+
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import { Button, TextField } from '@mui/material'
+
 
 const salesData = [
   {
@@ -42,7 +48,24 @@ const salesData = [
   }
 ]
 
-const renderStats = () => {
+const renderStats = (editingOnGoing) => {
+  const [kpis, setkpis] = useState({
+    "Sales": "",
+    "Customers": "",
+    "Products": "",
+    "Revenue": ""
+  })
+  const [sales, setsales] = useState(0)
+  const [Customers, setCustomers] = useState(0)
+  const [products, setproducts] = useState(0)
+  const [revenue, setrevenue] = useState(0)
+
+  const handleChangeValues = (title, newVal) => {
+    var copy = {...kpis}
+    copy[title] = newVal
+    setkpis(copy)
+  }
+
   return salesData.map((item, index) => (
     <Grid item xs={12} sm={3} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
@@ -60,8 +83,22 @@ const renderStats = () => {
           {item.icon}
         </Avatar>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='caption'>{item.title}</Typography>
-          <Typography variant='h6'>{item.stats}</Typography>
+          {editingOnGoing ? 
+            <TextField 
+            style={{width: "6rem"}} 
+            size='small' 
+            id="outlined-basic" 
+            value={kpis[item]} 
+            label={item.stats} 
+            variant="outlined" 
+            onChange={(e)=>{handleChangeValues(item.title, e.target.value)}}/>
+           : 
+           <div>
+            <Typography variant='caption'>{item.title}</Typography>
+            <Typography variant='h6'>{item.stats}</Typography>
+           </div>
+           }
+          
         </Box>
       </Box>
     </Grid>
@@ -69,13 +106,50 @@ const renderStats = () => {
 }
 
 const StatisticsCard = () => {
+  const [editingOnGoing, seteditingOnGoing] = useState(false)
+
+  function handleStartEdit() {
+    handleClose()
+     seteditingOnGoing(!editingOnGoing)
+  }
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Card>
       <CardHeader
         title='Overview'
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
+              <div>
+                <Button
+                  id="basic-button"
+                  aria-controls={open ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  <DotsVertical></DotsVertical>
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem onClick={handleStartEdit}>{editingOnGoing ? "Stop Editing" : "Edit"}</MenuItem>
+                </Menu>
+              </div>
           </IconButton>
         }
         subheader={
@@ -96,7 +170,7 @@ const StatisticsCard = () => {
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(3)} !important` }}>
         <Grid container spacing={[5, 0]}>
-          {renderStats()}
+          {renderStats(editingOnGoing)}
         </Grid>
       </CardContent>
     </Card>
