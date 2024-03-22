@@ -21,7 +21,7 @@ const TrophyImg = styled('img')({
   position: 'absolute'
 })
 
-const Trophy = () => {
+const Trophy = ({name, value}) => {
   // ** Hook
   const theme = useTheme()
   const imageSrc = theme.palette.mode === 'light' ? 'triangle-light.png' : 'triangle-dark.png'
@@ -31,10 +31,10 @@ const Trophy = () => {
       <CardContent>
         <Typography variant='h6'>✴ North Star Metric</Typography>
         <Typography variant='body2' sx={{ letterSpacing: '0.25px' }}>
-          Co2 Emissions reduced
+          {name}
         </Typography>
         <Typography variant='h4' sx={{ my: 3, color: 'primary.main' }}>
-          75,320kg
+          {value}
         </Typography>
         <Button size='small' variant='contained'>
           View Details

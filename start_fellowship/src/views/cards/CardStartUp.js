@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Link from 'next/link'
 
-const CardUser = ({name, image, description, industry, location, banner='/images/cards/background-user.png'}) => {
+const CardUser = ({id, name, image, description, industry, location, banner='/images/cards/background-user.png'}) => {
   return (
     <Card sx={{ position: 'relative' }}>
       <CardMedia sx={{ height: '12.625rem' }} image={banner} />
@@ -49,7 +49,7 @@ const CardUser = ({name, image, description, industry, location, banner='/images
               {description}
               </Typography>
           </Box>
-          <Link href={`/${name}`}>
+          <Link href={`/${id}`}>
             <Button sx={{ mt: 5, mb: -10 }}variant='contained'>Show Details</Button>
           </Link>
         </Box>
