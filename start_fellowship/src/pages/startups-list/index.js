@@ -64,28 +64,37 @@ const CardBasic = () => {
     )
   }
 
-  const filterComponents = filters.map((filter) => 
-    <Grid item xs={2} sx={{ paddingBottom: 0 }} key={filter.id}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{filter.id}</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          label="Age"
-          onChange={(e)=>{
-            setappliedFilters(appliedFilters.concat({
-              "name": filter.property,
-              "selected": e.target.value
-            }))}}
-        >
-          {filterOptions(filter.options)}
-        </Select>
-      </FormControl>
-    </Grid>
-  )
+  const filterComponents = filters.map((filter, index) => {
+    let placeholder;
+    if (index === 0) placeholder = "Relationship";
+    else if (index === 1) placeholder = "Country";
+    else if (index === 2) placeholder = "Industry";
+    else placeholder = "Stage";
+  
+    return (
+      <Grid item xs={2} sx={{ paddingBottom: 0 }} key={filter.id}>
+        <FormControl fullWidth>
+          <InputLabel id={`demo-simple-select-label-${filter.id}`}>{placeholder}</InputLabel>
+          <Select
+            labelId={`demo-simple-select-label-${filter.id}`}
+            id={`demo-simple-select-${filter.id}`}
+            label={placeholder}
+            onChange={(e) => {
+              setappliedFilters(appliedFilters.concat({
+                "name": filter.property,
+                "selected": e.target.value
+              }))
+            }}
+          >
+            {filterOptions(filter.options)}
+          </Select>
+        </FormControl>
+      </Grid>
+    );
+  });
 
   const resetButton = (
-    <Grid item xs={1} sx={{ paddingBottom: 0 }}>
+    <Grid item xs={1} sx={{ pb: 0, pt: 10 }}>
       <Button onClick={() => {
         setappliedFilters([])
       }}>Reset</Button>
