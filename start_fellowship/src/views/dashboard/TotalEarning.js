@@ -42,7 +42,7 @@ const data = [
   }
 ]
 
-const TotalEarning = () => {
+const TotalEarning = ({totalFunds="0$"}) => {
   return (
     <Card>
       <CardHeader
@@ -57,7 +57,7 @@ const TotalEarning = () => {
       <CardContent sx={{ pt: theme => `${theme.spacing(2.25)} !important` }}>
         <Box sx={{ mb: 1.5, display: 'flex', alignItems: 'center' }}>
           <Typography variant='h4' sx={{ fontWeight: 600, fontSize: '2.125rem !important' }}>
-            876,200€
+            {totalFunds}
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main' }}>
             <MenuUp sx={{ fontSize: '1.875rem', verticalAlign: 'middle' }} />

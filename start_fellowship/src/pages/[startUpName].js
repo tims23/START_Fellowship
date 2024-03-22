@@ -30,10 +30,38 @@ import StatisticsCard from 'src/views/dashboard/StatisticsCard'
 import { styled } from '@mui/material/styles'
 import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import getStartup from 'src/firebase/firestore/getStartup'
 
 const Dashboard = () => {
 
     const router = useRouter()
+    const [startUp, setstartUp] = useState({
+        name: "",
+        logo: '/images/avatars/1.png',
+        industry: "",
+        countryHQ: "",
+        northstarMetric: {
+            name: "",
+            value: ""
+        },
+        totalFundingReceived: "0$"
+    })
+
+    useEffect(() => {
+        if (router.query.startUpName == undefined) {return}
+        try {
+            getStartup(router.query.startUpName).then((querySnapshot) => {
+                const newData = querySnapshot.result.data("RNf5JWSBahvfDzf1k7ry")
+                if (querySnapshot.error != null) { console.error(querySnapshot.error) }
+                setstartUp(newData)
+              })
+        } catch (error) {
+
+            //redirect("/404")
+        }
+    }, [router.query.startUpName])
+    
 
     return (
         <ApexChartWrapper>
@@ -46,13 +74,13 @@ const Dashboard = () => {
                 <Avatar
                 alt='John Doe'
                 sx={{ width: 60, height: 60 }}
-                src='/images/avatars/1.png'/>
+                src={startUp.logo}/>
                 </Badge>
             </Grid>
             <Grid item xs={21} sm={8.5} lg={8.5}>
-                <Typography variant='h6' sx={{ mt:2 }}>{router.query.startUpName}</Typography>
+                <Typography variant='h6' sx={{ mt:2 }}>{startUp.name}</Typography>
                 <Typography variant='body2' sx={{ letterSpacing: '0.25px', mt:-2 }}>
-                Software Technology, Germany
+                {startUp.industry}, {startUp.countryHQ}
                 </Typography>
             </Grid>
             <Grid item xs={3} sm={2.5} lg={2.5}>
@@ -70,7 +98,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item xs={12} md={4}>
-                <Trophy />
+                <Trophy name={startUp.northstarMetric.name} value={startUp.northstarMetric.value}/>
             </Grid>
 
             <Grid item xs={12} md={8}>
@@ -82,7 +110,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item xs={12} md={6} lg={4}>
-                <TotalEarning />
+                <TotalEarning totalFunds={startUp.totalFundingReceived}/>
             </Grid>
 
             <Grid item xs={12} md={6} lg={4}>
