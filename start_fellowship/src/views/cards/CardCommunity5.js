@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
-const Card2 = () => {
+const Card5 = () => {
   return (
     <Card>
       <CardMedia sx={{ height: '9.375rem' }} image='/images/cards/watch-on-hand.jpg' />
@@ -24,4 +24,4 @@ const Card2 = () => {
   )
 }
 
-export default Card2
+export default Card5
