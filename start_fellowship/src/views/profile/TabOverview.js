@@ -130,6 +130,9 @@ const TabProfile = () => {
             </FormControl>
           </Grid>
           <Grid item xs={6} sm={3}>
+            <TextField fullWidth label='Industry' placeholder='e.g. "Software Technology"' />
+          </Grid>
+          <Grid item xs={5} sm={2.5}>
             <DatePickerWrapper>
               <DatePicker
                 selected={date}
@@ -142,17 +145,16 @@ const TabProfile = () => {
               />
             </DatePickerWrapper>
           </Grid>
-          <Grid item xs={12} sm={6} sx={{ mt: -2 }}>
-            <TextField fullWidth label='Industry' placeholder='e.g. "Software Technology"' />
-          </Grid>
-          <Grid item xs={12} sm={6} sx={{ mt: -2 }}>
+          <Grid item xs={19} sm={9.5} sx={{ mt: -2 }}>
             <FormControl>
               <FormLabel sx={{ fontSize: '0.875rem' }}>Stage</FormLabel>
               <RadioGroup row defaultValue='male' aria-label='gender' name='account-settings-info-radio'>
-                <FormControlLabel value='junior' label='Junior' control={<Radio />} />
-                <FormControlLabel value='incubator' label='Incubator' control={<Radio />} />
-                <FormControlLabel value='accelarator' label='Accelarator' control={<Radio />} />
-                <FormControlLabel value='Veteran' label='Veteran' control={<Radio />} />
+                <FormControlLabel value='junior' label='Family, Friends & Fools' control={<Radio />} />
+                <FormControlLabel value='re' label='Pre-Seed' control={<Radio />} />
+                <FormControlLabel value='fefe' label='Seed' control={<Radio />} />
+                <FormControlLabel value='incubator' label='Series A' control={<Radio />} />
+                <FormControlLabel value='accelarator' label='Series B' control={<Radio />} />
+                <FormControlLabel value='Veteran' label='Seriec C+' control={<Radio />} />
               </RadioGroup>
             </FormControl>
           </Grid>
