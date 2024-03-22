@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import Link from 'next/link'
 
-const CardUser = ({id, name, image, description, industry, location, banner='/images/cards/background-user.png'}) => {
+const CardUser = ({id="7FjQ6uEwevcO9THlTSnu", name, image, description, industry, location, banner='/images/cards/background-user.png'}) => {
   return (
     <Card sx={{ position: 'relative' }}>
       <CardMedia sx={{ height: '12.625rem' }} image={banner} />

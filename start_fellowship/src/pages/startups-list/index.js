@@ -32,8 +32,6 @@ const CardBasic = () => {
 
     for (var i = 0; i < appliedFilters.length; i++) {
       const filter = appliedFilters[i]
-      //console.log(filter)
-      //console.log(startup.businessModel)
       console.log(startup[filter.name])
       if (startup[filter.name] != undefined) {
         if (startup[filter.name] != filter.selected) {
@@ -41,12 +39,14 @@ const CardBasic = () => {
         }
       }
     }
+    
     return true
   }
 
   const startUpList = startUps.filter((startUp)=>isAppliedFilter(startUp)).map((startUp) => 
       <Grid item xs={12} sm={6} md={4} key={startUp.id}>
         <CardStartUp 
+        id={startUp.id}
         name={startUp.name} 
         image={startUp.logo} 
         description={startUp.productDescription} 

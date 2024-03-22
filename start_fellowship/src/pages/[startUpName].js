@@ -36,6 +36,7 @@ import getStartup from 'src/firebase/firestore/getStartup'
 const Dashboard = () => {
 
     const router = useRouter()
+    
     const [startUp, setstartUp] = useState({
         name: "",
         logo: '/images/avatars/1.png',
