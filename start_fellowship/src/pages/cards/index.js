@@ -38,20 +38,6 @@ const CardBasic = () => {
         <CardCommunity1 />
       </Grid>
 
-      <Grid item xs={12} sx={{ pb: 0, pt:10 }}>
-        <Typography variant='h5'>Social Media</Typography>
-      </Grid>
-
-      <Grid item xs={12} sm={6} md={4}>
-        <CardTwitter />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-        <CardFacebook />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4}>
-        <CardLinkedIn />
-      </Grid>
-
     </Grid>
   )
 }
