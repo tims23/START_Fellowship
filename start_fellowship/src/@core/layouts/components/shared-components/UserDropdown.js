@@ -20,15 +20,6 @@ import LogoutVariant from 'mdi-material-ui/LogoutVariant'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import MessageOutline from 'mdi-material-ui/MessageOutline'
 
-// ** Styled Components
-const BadgeContentSpan = styled('span')(({ theme }) => ({
-  width: 8,
-  height: 8,
-  borderRadius: '50%',
-  backgroundColor: theme.palette.success.main,
-  boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
-}))
-
 const UserDropdown = () => {
   // ** States
   const [anchorEl, setAnchorEl] = useState(null)
@@ -67,7 +58,6 @@ const UserDropdown = () => {
         overlap='circular'
         onClick={handleDropdownOpen}
         sx={{ ml: 2, cursor: 'pointer' }}
-        badgeContent={<BadgeContentSpan />}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
         <Avatar
@@ -89,7 +79,6 @@ const UserDropdown = () => {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Badge
               overlap='circular'
-              badgeContent={<BadgeContentSpan />}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             >
               <Avatar alt='John Doe' src='/images/avatars/1.png' sx={{ width: '2.5rem', height: '2.5rem' }} />

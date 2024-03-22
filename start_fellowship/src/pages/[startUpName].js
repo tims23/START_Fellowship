@@ -20,9 +20,14 @@ import ToDos from 'src/views/dashboard/ToDos'
 import Employees from 'src/views/dashboard/Employees'
 import Trophy from 'src/views/dashboard/Trophy'
 import Divider from '@mui/material/Divider'
+import Avatar from '@mui/material/Avatar'
+import Badge from '@mui/material/Badge'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import TotalEarning from 'src/views/dashboard/TotalEarning'
 import StatisticsCard from 'src/views/dashboard/StatisticsCard'
+import { styled } from '@mui/material/styles'
 import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 import { useRouter } from 'next/router'
 
@@ -32,7 +37,30 @@ const Dashboard = () => {
 
     return (
         <ApexChartWrapper>
-            <p>{router.query.startUpName}</p>
+        <Grid container spacing={6}>
+            <Grid item xs={1} sm={1} lg={1} sx={{ mb: 5 }}>
+                <Badge
+                overlap='circular'
+                sx={{ ml: 2, cursor: 'pointer' }}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
+                <Avatar
+                alt='John Doe'
+                sx={{ width: 60, height: 60 }}
+                src='/images/avatars/1.png'/>
+                </Badge>
+            </Grid>
+            <Grid item xs={21} sm={8.5} lg={8.5}>
+                <Typography variant='h6' sx={{ mt:2 }}>{router.query.startUpName}</Typography>
+                <Typography variant='body2' sx={{ letterSpacing: '0.25px', mt:-2 }}>
+                Software Technology, Germany
+                </Typography>
+            </Grid>
+            <Grid item xs={3} sm={2.5} lg={2.5}>
+                <Typography variant='body2' sx={{ letterSpacing: '0.25px', mt:15 }}>
+                Last updated: <b>18 days ago</b>
+                </Typography>
+            </Grid>
+        </Grid>
         <Grid container spacing={6}>
             <Grid item xs={24} sm={24}>
                 <Typography variant='body' sx={{ m: 0 }} xs={4} sm={4}>
